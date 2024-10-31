@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evermore - Travel Itinerary Planner</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaece2;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("haze.jpeg");
+            background-size: cover;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        #header {
+            background-color: #27572c;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #f3e28c;
+            border-bottom: 5px solid #ffe989;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        }
+        #container {
+            background-color: #faf6dd;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid goldenrod;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 28px;
+            color: #4b8f52;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+            display: block;
+            text-align: left;
+            font-weight: 500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px;
+            font-size: 16px;
+            border: 2px solid #c0d5d7;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus {
+            border-color: #4b8f52;
+            outline: none;
+        }
+        button {
+            background-color: #4b8f52;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #3c7b45;
+        }
+        a#back-link {
+            display: block;
+            background-color: #4b8f52;
+            color: #fff;
+            padding: 12px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        a#back-link:hover {
+            background-color: #3c7b45;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Travel Advisory</div>
+    <div id="container">
+        <h1>Manage Your Personalized Travel Plans</h1>
+        <p>Create, view, and customize your travel itineraries with activities tailored to the latest weather updates.</p>
+        <form>
+            <div class="form-group">
+                <label for="filename">Trip Name:</label>
+                <input id="filename" type="text" placeholder="Enter trip name">
+            </div>
+            <div class="form-group">
+                <label for="fileContents">Activity Details:</label>
+                <textarea id="fileContents" rows="5" placeholder="Enter activity details (e.g., weather-dependent events, timings)"></textarea>
+            </div>
+        </form>
+        <button id="btnCreate">Create</button>
+        <button id="btnUpdate">Update</button>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <div id="fileListContainer">
+            <h3>Your Plans</h3>
+            <div id="fileList"></div>
+        </div>
+        <a id="back-link" href="index.html">Back to Weather Advisory</a>
+    </div>
+    <script src="crud.js"></script>
+</body>
+</html>

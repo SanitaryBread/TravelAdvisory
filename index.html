@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evermore - Weather Advisory</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaece2;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("haze.jpeg");
+            background-size: cover;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        #header {
+            background-color: #27572c;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #f3e28c;
+            border-bottom: 5px solid #ffe989;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        }
+        #container {
+            background-color: #faf6dd;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border: goldenrod solid;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 28px;
+            color: #4b8f52;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+            display: block;
+            text-align: left;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px;
+            font-size: 16px;
+            border: 2px solid #c0d5d7;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #4b8f52;
+            outline: none;
+        }
+        button,
+        .button-link {
+            background-color: #4b8f52;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover,
+        .button-link:hover {
+            background-color: #3c7b45;
+        }
+        .weather_card {
+            background-color: #f9fafb;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+        .weather_card img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+        #clothing_recommendation {
+            font-size: 18px;
+            font-weight: 600;
+            color: white; 
+            background-color: rgba(75, 142, 82, 0.1); 
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            width: 100%; 
+            height: auto; 
+            min-height: 150px; 
+            margin-top: 20px;
+            background-size: cover; 
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Travel Advisory</div>
+
+    <div id="container">
+        <h1>Check the Weather for Your Destination!</h1>
+        <p>Travel Advisory helps you plan your travels by providing real-time weather updates for any location. Get insights into local temperatures, weather conditions, and recommended attire, ensuring you're prepared for your journey.</p>
+        
+        <label for="city_input">City:</label>
+        <input type="text" id="city_input" placeholder="Enter city">
+        
+        <label for="country_input">Country:</label>
+        <input type="text" id="country_input" placeholder="Enter country">
+        
+        <button onclick="buttonClicked()">Get Weather</button>
+
+        <div id="weather_details">
+            <div class="weather_card" id="weather_info_card">
+                <img id="weather_icon" alt="Weather Icon" style="justify-content: center;">
+                <p id="location"></p>
+                <p id="local_time"></p>
+                <p id="temperature"></p>
+                <p id="feels_like"></p>
+                <p id="forecast"></p>
+                <p id="sunrise"></p>
+                <p id="sunset"></p>
+                <p id="wind_speed"></p>
+                <p id="humidity"></p>
+                <p id="weather_description"></p>
+            </div>
+            
+            <button id="clothing_button" onclick="showClothingRecommendation()" style="display: none;">Show Clothing Recommendation</button>
+            
+            <div id="clothing_recommendation" class="weather_card" style="display: none;"></div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <a id="booking" href="crud.html" class="button-link">Go To Itinerary Page</a>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
